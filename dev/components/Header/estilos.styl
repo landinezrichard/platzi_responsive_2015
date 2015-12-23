@@ -1,0 +1,37 @@
+/*
+*	$black = #212121
+*	$white = #FAFAFA
+*/
+
+.Header
+	background-color $black
+	color $white
+	height 4em
+	position fixed
+	top 0
+	left 0
+	width 100%
+	z-index 10
+	line-height 4em
+	
+	&-mobile
+		display flex
+		justify-content space-between
+	
+	&-logo
+		margin 0 0 0 1rem
+		order 1
+
+/*Tablet*/
+		
+@media (min-width: 768px)
+	.Header
+		display flex
+		flex-flow row wrap
+		justify-content space-between
+		height 5em
+		transition all .3s ease
+		align-items center	
+		
+		&-logo
+			margin 0 0 0 1.5rem

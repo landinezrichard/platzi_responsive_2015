@@ -114,6 +114,7 @@ gulp.task('build-js', function() {
     transform:[["babelify",{ "presets": ['es2015'] }], jadeify] //transformaciones
   })
   .bundle()
+  .on('error', gutil.log)
   .pipe(source('app.js'))//archivo destino
   .pipe(buffer())
   .pipe(uglify())//minificamos js
