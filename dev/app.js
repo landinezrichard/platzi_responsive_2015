@@ -1,5 +1,11 @@
 (function () {
 	const showMenu = require('./components/MainMenu');
+	const changeHeader = require('./components/Header');
 
-	showMenu.init();
+	document.addEventListener('DOMContentLoaded', onDOMload);
+
+	function onDOMload() {
+		showMenu.init();
+		changeHeader.init();
+	}
 }())

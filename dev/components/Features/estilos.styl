@@ -1,0 +1,28 @@
+/*Componente FEATURES*/
+
+$gris = #dedede
+
+.Features
+	&-item
+		padding 1em
+		border-left 6px solid $gris
+		border-bottom 1px solid $gris
+		
+		&:hover
+			background-color $gris
+		
+		&:nth-child(1)
+			border-left-color green
+		&:nth-child(2)
+			border-left-color red
+		&:nth-child(3)
+			border-left-color blue
+		&:nth-child(4)
+			border-left-color orange
+
+/*Tablet*/
+
+@media (min-width: 768px)
+	.Features
+		display flex
+		justify-content space-between
