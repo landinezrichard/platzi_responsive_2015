@@ -1,18 +1,34 @@
 var changeHeader = (function () {
+	/*Dependencia*/
+	require('./optimizedScroll.js')
+
 	const header = document.querySelector('.Header');
-	
-	function suscribeEvents () {
-		header.addEventListener('scroll',onScroll);
+	const clase  = 'Header--light';
+	let laTiene = false;
+		
+	function suscribeEvents () {		
+		window.addEventListener("optimizedScroll", onScroll);
 	}
 
 	function onScroll () {
-		if(window.scrollY >= 214){
-			headerclassList.toggle('Header--light');
-		} else{
-			headerclassList.toggle('Header--light');
-		}
+		let listaClases = header.classList;		
 
-		// menu.classList.toggle('MainMenu-list--show')
+		if(window.scrollY >= 200){
+			for(var i=0; i<listaClases.length; ++i){
+			    if(listaClases[i] === clase){          
+			       laTiene = true;  
+			    }
+			}
+			if(!laTiene){
+				listaClases.add(clase);
+			}			
+		} else{
+			if(laTiene){
+				listaClases.remove(clase);
+				laTiene = false;
+			}
+		}
+		
 	}
 
 	return {
