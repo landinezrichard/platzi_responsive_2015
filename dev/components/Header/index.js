@@ -3,8 +3,7 @@ var changeHeader = (function () {
 	require('./optimizedScroll.js')
 
 	const header = document.querySelector('.Header');
-	const clase  = 'Header--light';
-	let laTiene = false;
+	const clase  = 'Header--light';	
 		
 	function suscribeEvents () {		
 		window.addEventListener("optimizedScroll", onScroll);
@@ -14,21 +13,18 @@ var changeHeader = (function () {
 		let listaClases = header.classList;		
 
 		if(window.scrollY >= 200){
-			for(var i=0; i<listaClases.length; ++i){
-			    if(listaClases[i] === clase){          
-			       laTiene = true;  
-			    }
-			}
-			if(!laTiene){
+			if(!hasClass(header, clase)){
 				listaClases.add(clase);
 			}			
 		} else{
-			if(laTiene){
-				listaClases.remove(clase);
-				laTiene = false;
+			if(hasClass(header, clase)){
+				listaClases.remove(clase);				
 			}
 		}
-		
+	}
+
+	function hasClass(element, cls) {
+    	return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
 	}
 
 	return {

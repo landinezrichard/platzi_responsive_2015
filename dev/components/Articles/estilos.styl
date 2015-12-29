@@ -7,6 +7,9 @@
 		margin 0 auto
 	&-image
 		width 100%
+	&-description
+		padding 1em
+		margin 0
 		
 /*Tablet*/
 
@@ -15,3 +18,8 @@
 		display flex
 		&-imageContainer
 			margin 1em
+		&:nth-child(odd)
+			.Articles-imageContainer	
+				order 2				
+			.Articles-description
+				order 1

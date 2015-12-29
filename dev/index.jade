@@ -11,5 +11,6 @@ body
 	section.MainContent
 		//- include ./components/Video/template.jade
 		include ./components/Features/template.jade
-		include ./components/Articles/template.jade
+		- for (var x = 0; x < 3; x++)
+			include ./components/Articles/template.jade
 	script(type="text/javascript", src="js/app.js")
