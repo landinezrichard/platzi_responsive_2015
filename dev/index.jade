@@ -5,7 +5,9 @@ head
 	meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
 	title
 		|	Pagina Web
+	// smoosh
 	link(rel="stylesheet", type="text/css", href="css/estilos.css")
+	// endsmoosh
 body
 	include ./components/Header/template.jade
 	section.MainContent
@@ -13,4 +15,6 @@ body
 		include ./components/Features/template.jade
 		- for (var x = 0; x < 3; x++)
 			include ./components/Articles/template.jade
+	// smoosh
 	script(type="text/javascript", src="js/app.js")
+	// endsmoosh
